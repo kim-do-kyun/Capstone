@@ -19,7 +19,6 @@
 
 ## 🔧 사용 기술 스택
 - **Frontend:** Next.js
-- **Backend:** Spring Boot
 - **Deployment:** AWS
 
 ## 🚀 주요 기능
