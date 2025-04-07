@@ -41,7 +41,7 @@ const loadingPhrases = [
   "당첨 확률 높이는중",
   "로또 명상 중",
   "행운의 주파수 맞추는중",
-  "당첨의 문 두드리는중",
+  "당첨의 문 두드리는중"
 ];
 
 export default function Home() {
@@ -54,7 +54,7 @@ export default function Home() {
   const generateLottoNumbers = () => {
     setIsAnimating(true);
 
-    // 초기 문구 설정
+    // 디폴트 문구
     setLoadingPhrase(loadingPhrases[Math.floor(Math.random() * loadingPhrases.length)]);
 
     setDots("");
@@ -79,11 +79,10 @@ export default function Home() {
   useEffect(() => {
     let phraseInterval: NodeJS.Timeout;
 
-    // 1.5초마다 문구 변경
     if (isAnimating) {
       phraseInterval = setInterval(() => {
         setLoadingPhrase(loadingPhrases[Math.floor(Math.random() * loadingPhrases.length)]);
-      }, 1500);
+      }, 1000);
     }
 
     return () => {
