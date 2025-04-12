@@ -64,11 +64,16 @@ export default function Home() {
       const newNumbers = [];
 
       for (let i = 0; i < count; i++) {
-        const set = new Set<number>();
-        while (set.size < 7) {
-          set.add(Math.floor(Math.random() * 45) + 1);
+        const numberSet = new Set<number>();
+        while (numberSet.size < 7) {
+          numberSet.add(Math.floor(Math.random() * 45) + 1);
         }
-        newNumbers.push(Array.from(set).sort((a, b) => a - b));
+
+        const sorted = Array.from(numberSet).sort((a, b) => a - b);
+        const mainNumbers = sorted.slice(0, 6); // 앞 6개
+        const bonusNumber = sorted[6]; // 마지막 1개
+
+        newNumbers.push([...mainNumbers, bonusNumber]);
       }
       setNumbers(newNumbers);
 
