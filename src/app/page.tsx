@@ -54,7 +54,6 @@ export default function Home() {
   const generateLottoNumbers = () => {
     setIsAnimating(true);
 
-    // 디폴트 문구
     setLoadingPhrase(loadingPhrases[Math.floor(Math.random() * loadingPhrases.length)]);
 
     setDots("");
@@ -70,8 +69,8 @@ export default function Home() {
         }
 
         const sorted = Array.from(numberSet).sort((a, b) => a - b);
-        const mainNumbers = sorted.slice(0, 6); // 앞 6개
-        const bonusNumber = sorted[6]; // 마지막 1개
+        const mainNumbers = sorted.slice(0, 6);
+        const bonusNumber = sorted[6];
 
         newNumbers.push([...mainNumbers, bonusNumber]);
       }
