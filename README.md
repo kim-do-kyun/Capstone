@@ -32,6 +32,11 @@ First, run the development server:
 ```bash
 npm run dev
 # or
+npm run build
+npm start
+# or
+npm serve out
+# or
 yarn dev
 # or
 pnpm dev
